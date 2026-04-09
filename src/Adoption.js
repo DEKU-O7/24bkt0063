@@ -1,5 +1,8 @@
+//class component
 import React, { Component } from "react";
+//component API
 class Adoption extends Component {
+  //constructor,props,state
   constructor(props) {
     super(props);
     this.state = {
@@ -12,15 +15,22 @@ class Adoption extends Component {
       submitted: false
     };
   }
+  //validation logic
   validate = () => {
     const errors = {};
-    if (!this.state.name) errors.name = "Full name is required";
-    if (!this.state.email || !this.state.email.includes("@")) errors.email = "Enter a valid email";
-    if (!this.state.phone || this.state.phone.length < 10) errors.phone = "Enter a valid phone number";
-    if (!this.state.pet) errors.pet = "Please select a pet";
-    if (!this.state.reason) errors.reason = "Please tell us why you want to adopt";
+    if (!this.state.name)
+       errors.name = "Full name is required";
+    if (!this.state.email || !this.state.email.includes("@"))
+       errors.email = "Enter a valid email";
+    if (!this.state.phone || this.state.phone.length < 10)
+       errors.phone = "Enter a valid phone number";
+    if (!this.state.pet)
+       errors.pet = "Please select a pet";
+    if (!this.state.reason)
+       errors.reason = "Please tell us why you want to adopt";
     return errors;
   };
+  //react API 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -33,6 +43,7 @@ class Adoption extends Component {
       this.setState({ errors });
     }
   };
+  //react API
   render() {
     const container = {
       backgroundColor: "white",
@@ -53,10 +64,12 @@ class Adoption extends Component {
       borderRadius: "5px",
       width: "100%"
     };
+    //JSX
     return (
       <div style={container}>
         <h2>Adoption Application</h2>
         <p>Fill in your details and we'll connect you with your perfect match.</p>
+        {/* conditional rendering */}
         {this.state.pet && <p style={{ fontWeight: "bold" }}>Selected Pet: {this.state.pet}</p>}
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="name" placeholder="Full Name" style={input} onChange={this.handleChange} />

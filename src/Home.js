@@ -1,15 +1,17 @@
+//functional component 
 import React, {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import home from "./images/home.png";
 function Home() {
-  // useState
+  // useState,hooks
   const [message, setMessage] = useState("");
-  // useEffect
+  // useEffect,hooks
   useEffect(() => {
     setMessage(
       "Find your perfect furry companion today. At PetConnect, we connect loving families with pets who are looking for a forever home. Browse through adorable animals, learn about them, and take the first step toward bringing home a loyal friend."
     );
   }, []);
+  //styling
   const container = {
     textAlign: "center",
     padding: "50px 20px"
@@ -42,6 +44,7 @@ function Home() {
           style={{ width: "200px", marginTop: "20px" }}
         />
         <br />
+        {/* Link to Pets page */}
         <Link to="/pets">
           <button style={buttonStyle}>
             Explore Pets 

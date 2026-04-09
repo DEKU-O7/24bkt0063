@@ -1,3 +1,4 @@
+//main component, routing
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
@@ -6,6 +7,7 @@ import Adoption from "./Adoption";
 import Contact from "./Contact";
 import Donation from "./Donation";
 function App() {
+  //styling
   const pageStyle = {
     fontFamily: "Arial",
     backgroundColor: "#eef2f3",
@@ -27,7 +29,7 @@ function App() {
     <BrowserRouter>
       <div style={pageStyle}>
         <div style={navbarStyle}>
-          <h2>🐾 PetConnect</h2>
+          <h2>PetConnect</h2>
           <div>
             <Link to="/" style={linkStyle}>Home</Link>
             <Link to="/pets" style={linkStyle}>Pets</Link>
@@ -40,7 +42,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pets" element={<Pets />} />
-            <Route path="/adoption" element={<Adoption name="" />} />
+            <Route path="/adoption" element={<Adoption pet="" />} />
             <Route path="/donation" element={<Donation />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

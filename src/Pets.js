@@ -1,3 +1,4 @@
+//functional component
 import React from "react";
 import { Link } from "react-router-dom";
 import tom from "./images/tom.png";
@@ -11,6 +12,7 @@ function Pets() {
     { id: 3, name: "Bella", type: "Ragdoll", img: bella, status: "Adopted" },
     { id: 4, name: "Jimmy", type: "Pug", img: pug, status: "Available" }
   ];
+  //styling
   const cardStyle = {
     display: "inline-block",
     verticalAlign: "top",
@@ -23,6 +25,7 @@ function Pets() {
     textAlign: "center"
   };
   const imgStyle = { width: "100%", height: "150px", objectFit: "cover", borderRadius: "8px" };
+  //JSX
   return (
     <div>
       <h2>Available Pets</h2>

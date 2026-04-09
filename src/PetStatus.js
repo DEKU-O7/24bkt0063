@@ -1,7 +1,11 @@
+//functional component
 import React from "react";
+//props
 function PetStatus(props) {
+  //props validation
   const validStatuses = ["Available", "Adopted"];
   const isValidStatus = validStatuses.includes(props.status);
+  //styling
   const cardStyle = {
     border: "2px solid #1f618d",
     borderRadius: "10px",
@@ -28,6 +32,7 @@ function PetStatus(props) {
     fontWeight: "bold",
     marginTop: "10px"
   };
+  //JSX
   return (
     <div style={cardStyle}>
       <h3 style={headingStyle}>{props.name}</h3>
